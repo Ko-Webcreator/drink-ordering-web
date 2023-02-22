@@ -18,6 +18,7 @@ const Button = ({ label, price, orderType }: Props) => {
     // お会計に反映する
     dispatch(addCountState({ orderType, price }))
   }, [orderType, price])
+
   const count = useAppSelector((state) => selectOrderCount(state, orderType))
 
   return (
