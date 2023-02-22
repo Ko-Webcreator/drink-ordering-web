@@ -1,23 +1,30 @@
 import { CustomLink } from 'components/common/CustomLink'
 import React, { useCallback } from 'react'
 import 'scss/components/top/button.scss'
+import { useAppDispatch, useAppSelector } from 'store'
+import { addCountState, selectOrderCount } from 'store/top/orderSystemSlice'
+import { OrderType } from 'types/order'
 
 type Props = {
-  id: number
   label: string
   price: number
+  orderType: OrderType
 }
 
-const Button = ({ id, label, price }: Props) => {
+const Button = ({ label, price, orderType }: Props) => {
+  const dispatch = useAppDispatch()
+
   const onClickButton = useCallback(() => {
     // お会計に反映する
-  }, [id])
+    dispatch(addCountState({ orderType, price }))
+  }, [orderType, price])
+  const count = useAppSelector((state) => selectOrderCount(state, orderType))
 
   return (
     <CustomLink onClick={onClickButton} className="button">
       <span>{label}</span>
       <span>{price}円</span>
-      <span className="number">0</span>
+      <span className="number">{count}</span>
     </CustomLink>
   )
 }

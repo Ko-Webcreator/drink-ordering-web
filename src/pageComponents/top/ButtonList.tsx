@@ -7,7 +7,7 @@ const ButtonList = () => {
   return (
     <div className="buttonList">
       {buttonLinks.map((e) => (
-        <Button key={e.id} id={e.id} label={e.label} price={e.price} />
+        <Button key={e.id} label={e.label} price={e.price} orderType={e.type} />
       ))}
     </div>
   )

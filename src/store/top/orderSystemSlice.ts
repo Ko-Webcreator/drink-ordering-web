@@ -1,6 +1,6 @@
 import { RootState } from 'store'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { ButtonType } from 'types/button'
+import { OrderType } from 'types/order'
 
 type State = {
   coffeeCount: number
@@ -28,30 +28,30 @@ const orderSystemSlice = createSlice({
   reducers: {
     addCountState: (
       state,
-      { payload }: PayloadAction<{ buttonType: ButtonType; price: number }>
+      { payload }: PayloadAction<{ orderType: OrderType; price: number }>
     ) => {
       // total 処理
       state.totalCount += 1
       state.totalPrice += payload.price
 
       // 個別カウントを1カウントプラスする
-      if (payload.buttonType === ButtonType.Coffee) {
+      if (payload.orderType === OrderType.Coffee) {
         state.coffeeCount += 1
         return
       }
-      if (payload.buttonType === ButtonType.Tea) {
+      if (payload.orderType === OrderType.Tea) {
         state.teaCount += 1
         return
       }
-      if (payload.buttonType === ButtonType.Milk) {
+      if (payload.orderType === OrderType.Milk) {
         state.milkCount += 1
         return
       }
-      if (payload.buttonType === ButtonType.Coke) {
+      if (payload.orderType === OrderType.Coke) {
         state.cokeCount += 1
         return
       }
-      if (payload.buttonType === ButtonType.Beer) {
+      if (payload.orderType === OrderType.Beer) {
         state.beerCount += 1
         return
       }
@@ -63,25 +63,25 @@ const orderSystemSlice = createSlice({
 export const { addCountState } = orderSystemSlice.actions
 
 // Selectors
-
-export const selectCoffeeCount = ({ orderSystem: state }: RootState) => {
-  return state.coffeeCount
-}
-
-export const selectTeaCount = ({ orderSystem: state }: RootState) => {
-  return state.teaCount
-}
-
-export const selectMilkCount = ({ orderSystem: state }: RootState) => {
-  return state.milkCount
-}
-
-export const selectCokeCount = ({ orderSystem: state }: RootState) => {
-  return state.cokeCount
-}
-
-export const selectBeerCount = ({ orderSystem: state }: RootState) => {
-  return state.beerCount
+export const selectOrderCount = (
+  { orderSystem: state }: RootState,
+  orderType: OrderType
+) => {
+  if (orderType === OrderType.Coffee) {
+    return state.coffeeCount
+  }
+  if (orderType === OrderType.Tea) {
+    return state.teaCount
+  }
+  if (orderType === OrderType.Milk) {
+    return state.milkCount
+  }
+  if (orderType === OrderType.Coke) {
+    return state.cokeCount
+  }
+  if (orderType === OrderType.Beer) {
+    return state.beerCount
+  }
 }
 
 export const selectTotalCount = ({ orderSystem: state }: RootState) => {

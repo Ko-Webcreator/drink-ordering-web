@@ -1,4 +1,4 @@
-export enum ButtonType {
+export enum OrderType {
   Coffee,
   Tea,
   Milk,
