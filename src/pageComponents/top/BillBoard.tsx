@@ -10,7 +10,7 @@ const BillBoard = () => {
   return (
     <dl className="billBoard-wrap">
       <dt>お会計</dt>
-      <dd>商品数 : {count}円</dd>
+      <dd>商品数 : {count}個</dd>
       <dd>合計金額 : {price}円</dd>
     </dl>
   )
