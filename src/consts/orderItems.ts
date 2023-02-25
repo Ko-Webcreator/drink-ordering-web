@@ -1,6 +1,6 @@
 import { OrderList } from 'types/order'
 
-export const buttonLinks = [
+export const ORDER_ITEMS = [
   {
     id: 0,
     label: 'コーヒー',
