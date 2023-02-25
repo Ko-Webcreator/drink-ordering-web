@@ -6,6 +6,11 @@ import 'scss/common/index.scss'
 import { Provider } from 'react-redux'
 import { store } from 'store'
 
+if (process.env.NODE_ENV === 'development') {
+  const { worker } = require('./mocks/server')
+  worker.start()
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
