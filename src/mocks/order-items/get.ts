@@ -10,31 +10,31 @@ const getOrderItems: ResponseResolver<MockedRequest, typeof restContext> = (
   const items: OrderItemsReq[] = [
     {
       id: 0,
-      label: 'ƒR[ƒq[',
+      label: 'ã‚³ãƒ¼ãƒ’ãƒ¼',
       price: 480,
       type: OrderList.Coffee,
     },
     {
       id: 1,
-      label: 'g’ƒ',
+      label: 'ç´…èŒ¶',
       price: 280,
       type: OrderList.Tea,
     },
     {
       id: 2,
-      label: 'ƒ~ƒ‹ƒN',
+      label: 'ãƒŸãƒ«ã‚¯',
       price: 180,
       type: OrderList.Milk,
     },
     {
       id: 3,
-      label: 'ƒR[ƒ‰[',
+      label: 'ã‚³ãƒ¼ãƒ©ãƒ¼',
       price: 190,
       type: OrderList.Coke,
     },
     {
       id: 4,
-      label: 'ƒr[ƒ‹',
+      label: 'ãƒ“ãƒ¼ãƒ«',
       price: 580,
       type: OrderList.Beer,
     },

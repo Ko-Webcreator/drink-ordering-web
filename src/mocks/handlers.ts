@@ -1,6 +1,6 @@
 import { rest } from 'msw'
-import getUsers from 'mocks/order-items/get'
+import getOrderItems from 'mocks/order-items/get'
 
-const handlers = [rest.get('mocks/order-items/', getUsers)]
+const handlers = [rest.get('mocks/order-items/', getOrderItems)]
 
 export default handlers
