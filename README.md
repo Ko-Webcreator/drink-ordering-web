@@ -37,4 +37,7 @@ https://react-redux.js.org/
 
 @reduxjs/toolkit
 https://redux-toolkit.js.org/
+
+swr
+https://swr.vercel.app/ja/docs/getting-started
 ```
