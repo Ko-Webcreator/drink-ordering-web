@@ -1,34 +1,34 @@
-import { OrderType } from 'types/order'
+import { OrderList } from 'types/order'
 
-export const buttonLinks = [
+export const ORDER_ITEMS = [
   {
     id: 0,
     label: 'コーヒー',
     price: 480,
-    type: OrderType.Coffee,
+    type: OrderList.Coffee,
   },
   {
     id: 1,
     label: '紅茶',
     price: 280,
-    type: OrderType.Tea,
+    type: OrderList.Tea,
   },
   {
     id: 2,
     label: 'ミルク',
     price: 180,
-    type: OrderType.Milk,
+    type: OrderList.Milk,
   },
   {
     id: 3,
     label: 'コーラー',
     price: 190,
-    type: OrderType.Coke,
+    type: OrderList.Coke,
   },
   {
     id: 4,
     label: 'ビール',
     price: 580,
-    type: OrderType.Beer,
+    type: OrderList.Beer,
   },
 ] as const

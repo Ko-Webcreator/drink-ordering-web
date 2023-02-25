@@ -1,12 +1,12 @@
 import Button from 'components/top/Button'
-import { buttonLinks } from 'consts/buttonLinks'
+import { ORDER_ITEMS } from 'consts/orderItems'
 import 'scss/pageComponents/top/buttonList.scss'
 import React from 'react'
 
 const ButtonList = () => {
   return (
     <div className="buttonList">
-      {buttonLinks.map((e) => (
+      {ORDER_ITEMS.map((e) => (
         <Button key={e.id} label={e.label} price={e.price} orderType={e.type} />
       ))}
     </div>

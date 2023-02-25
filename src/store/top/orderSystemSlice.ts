@@ -1,6 +1,6 @@
 import { RootState } from 'store'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { OrderType } from 'types/order'
+import { OrderType, OrderList } from 'types/order'
 
 type State = {
   coffeeCount: number
@@ -35,23 +35,23 @@ const orderSystemSlice = createSlice({
       state.totalPrice += payload.price
 
       // 個別カウントを1カウントプラスする
-      if (payload.orderType === OrderType.Coffee) {
+      if (payload.orderType === OrderList.Coffee) {
         state.coffeeCount += 1
         return
       }
-      if (payload.orderType === OrderType.Tea) {
+      if (payload.orderType === OrderList.Tea) {
         state.teaCount += 1
         return
       }
-      if (payload.orderType === OrderType.Milk) {
+      if (payload.orderType === OrderList.Milk) {
         state.milkCount += 1
         return
       }
-      if (payload.orderType === OrderType.Coke) {
+      if (payload.orderType === OrderList.Coke) {
         state.cokeCount += 1
         return
       }
-      if (payload.orderType === OrderType.Beer) {
+      if (payload.orderType === OrderList.Beer) {
         state.beerCount += 1
         return
       }
@@ -67,19 +67,19 @@ export const selectOrderCount = (
   { orderSystem: state }: RootState,
   orderType: OrderType
 ) => {
-  if (orderType === OrderType.Coffee) {
+  if (orderType === OrderList.Coffee) {
     return state.coffeeCount
   }
-  if (orderType === OrderType.Tea) {
+  if (orderType === OrderList.Tea) {
     return state.teaCount
   }
-  if (orderType === OrderType.Milk) {
+  if (orderType === OrderList.Milk) {
     return state.milkCount
   }
-  if (orderType === OrderType.Coke) {
+  if (orderType === OrderList.Coke) {
     return state.cokeCount
   }
-  if (orderType === OrderType.Beer) {
+  if (orderType === OrderList.Beer) {
     return state.beerCount
   }
 }
