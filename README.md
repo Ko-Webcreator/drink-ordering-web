@@ -32,4 +32,9 @@ npm run build or yarn build
 sass
 https://www.npmjs.com/package/sass
 
+react-redux
+https://react-redux.js.org/
+
+@reduxjs/toolkit
+https://redux-toolkit.js.org/
 ```

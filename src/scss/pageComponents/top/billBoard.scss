@@ -1,0 +1,20 @@
+.billBoard-wrap {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 250px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-left: 80px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px 0 var(--color-box);
+
+  dt {
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-gray);
+  }
+
+  dd {
+    padding-top: 10px;
+  }
+}
