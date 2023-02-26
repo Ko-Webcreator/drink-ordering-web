@@ -3,7 +3,7 @@ import 'scss/pageComponents/top/buttonList.scss'
 import React from 'react'
 import { useOderItems } from 'hooks/api/fetch/order-items'
 import ReactLoading from 'react-loading'
-import { ERROR_NO_ITEMS } from 'consts/messages/error'
+import { ERROR_NO_ITEMS_MSG } from 'consts/messages/error'
 
 const ButtonList = () => {
   const { data, isLoading } = useOderItems()
@@ -22,7 +22,7 @@ const ButtonList = () => {
           />
         ))
       ) : (
-        ERROR_NO_ITEMS
+        ERROR_NO_ITEMS_MSG
       )}
     </div>
   )
