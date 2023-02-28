@@ -1,5 +1,5 @@
 import Button from 'components/top/Button'
-import 'scss/pageComponents/top/buttonList.scss'
+import styles from 'scss/pageComponents/top/buttonList.module.scss'
 import React, { useEffect } from 'react'
 import { useOderItems } from 'hooks/api/fetch/order-items'
 import ReactLoading from 'react-loading'
@@ -18,7 +18,7 @@ const ButtonList = () => {
   }, [error])
 
   return (
-    <div className="buttonList">
+    <div className={styles.wrap}>
       {isLoading ? (
         <ReactLoading type="spin" color="black" height="30px" width="30px" />
       ) : data?.length ? (

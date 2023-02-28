@@ -14,7 +14,7 @@ export const ErrorDialog = () => {
   }, [dispatch])
 
   return isError ? (
-    <div className={styles.error}>
+    <div className={styles.wrap}>
       <article>
         <h2>{ERROR_DIALOG_MSG}</h2>
         <CustomLink onClick={onClickCloseDialog}>閉じる</CustomLink>

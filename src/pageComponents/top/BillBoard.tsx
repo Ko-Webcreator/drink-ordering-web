@@ -1,5 +1,5 @@
 import React from 'react'
-import 'scss/pageComponents/top/billBoard.scss'
+import styles from 'scss/pageComponents/top/billBoard.module.scss'
 import { useAppSelector } from 'store'
 import { selectTotalCount, selectTotalPrice } from 'store/top/orderSystemSlice'
 
@@ -8,7 +8,7 @@ const BillBoard = () => {
   const price = useAppSelector((state) => selectTotalPrice(state))
 
   return (
-    <dl className="billBoard-wrap">
+    <dl className={styles.wrap}>
       <dt>お会計</dt>
       <dd>商品数 : {count}個</dd>
       <dd>合計金額 : {price}円</dd>
