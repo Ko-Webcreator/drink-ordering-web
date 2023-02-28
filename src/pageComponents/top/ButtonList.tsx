@@ -1,12 +1,21 @@
 import Button from 'components/top/Button'
 import 'scss/pageComponents/top/buttonList.scss'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useOderItems } from 'hooks/api/fetch/order-items'
 import ReactLoading from 'react-loading'
 import { ERROR_NO_ITEMS_MSG } from 'consts/messages/error'
+import { useAppDispatch } from 'store'
+import { changeIsErrorStatus } from 'store/common/errorSlice'
 
 const ButtonList = () => {
-  const { data, isLoading } = useOderItems()
+  const { data, error, isLoading } = useOderItems()
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    if (error) {
+      dispatch(changeIsErrorStatus({ isError: true }))
+    }
+  }, [error])
 
   return (
     <div className="buttonList">

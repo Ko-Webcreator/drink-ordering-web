@@ -1,8 +1,7 @@
-import 'whatwg-fetch'
+import { Provider } from 'react-redux'
 import { render, screen } from '@testing-library/react'
 import React from 'react'
-import ButtonList from '../ButtonList'
-import { Provider } from 'react-redux'
+import ButtonList from 'pageComponents/top/ButtonList'
 import { store } from 'store'
 
 describe('Render ButtonList', () => {

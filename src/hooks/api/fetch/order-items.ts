@@ -4,13 +4,14 @@ import { OrderItemsReq } from 'types/api/orderItems'
 
 export const useOderItems = () => {
   const { fetcher } = customAxios()
-  const { data, isLoading } = useSWRMutation<OrderItemsReq[]>(
+  const { data, error, isLoading } = useSWRMutation<OrderItemsReq[]>(
     'mocks/order-items/',
     fetcher
   )
 
   return {
     data,
+    error,
     isLoading,
   }
 }
