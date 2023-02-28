@@ -1,0 +1,41 @@
+.error {
+  display: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: var(--color-dialog-bg);
+  white-space: pre-wrap;
+
+  article {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 300px;
+    height: 180px;
+    border-radius: 20px;
+    background: var(--color-white);
+    padding: 30px;
+    box-sizing: border-box;
+    position: fixed;
+    margin: auto;
+    inset: 0;
+
+    h2 {
+      font-size: 16px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    button {
+      color: var(--color-white);
+      background: var(--color-gray);
+      margin-top: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      width: 100%;
+      padding: 8px 0;
+      border-radius: 10px;
+    }
+  }
+}
