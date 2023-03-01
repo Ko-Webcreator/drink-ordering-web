@@ -17,6 +17,8 @@ const ButtonList = () => {
     }
   }, [error])
 
+  if (error) return null
+
   return (
     <div className={styles.wrap}>
       {isLoading ? (
