@@ -2,8 +2,13 @@ import { configureStore } from '@reduxjs/toolkit'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { combineReducers } from 'redux'
 import { orderSystemReducer } from 'store/top/orderSystemSlice'
+import { errorStatusReducer } from './common/errorSlice'
 
 const appReducer = combineReducers({
+  // common
+  errorStatus: errorStatusReducer,
+
+  // pages
   orderSystem: orderSystemReducer,
 })
 

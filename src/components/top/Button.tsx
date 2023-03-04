@@ -1,6 +1,6 @@
 import { CustomLink } from 'components/common/CustomLink'
 import React, { useCallback } from 'react'
-import 'scss/components/top/button.scss'
+import styles from 'scss/components/top/button.module.scss'
 import { useAppDispatch, useAppSelector } from 'store'
 import { addCountState, selectOrderCount } from 'store/top/orderSystemSlice'
 import { OrderType } from 'types/order'
@@ -22,10 +22,10 @@ const Button = ({ label, price, orderType }: Props) => {
   const count = useAppSelector((state) => selectOrderCount(state, orderType))
 
   return (
-    <CustomLink onClick={onClickButton} className="button">
+    <CustomLink onClick={onClickButton} className={styles.wrap}>
       <span>{label}</span>
       <span>{price}円</span>
-      <span className="number">{count}</span>
+      <span className={styles.number}>{count}</span>
     </CustomLink>
   )
 }

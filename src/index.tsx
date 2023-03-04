@@ -5,11 +5,18 @@ import reportWebVitals from 'reportWebVitals'
 import 'scss/common/index.scss'
 import { Provider } from 'react-redux'
 import { store } from 'store'
+import { ErrorDialog } from 'components/common/ErrorDialog'
+
+if (process.env.NODE_ENV === 'development') {
+  const { worker } = require('./mocks/browser')
+  worker.start()
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <Provider store={store}>
+      <ErrorDialog />
       <App />
     </Provider>
   </React.StrictMode>

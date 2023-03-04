@@ -37,4 +37,13 @@ https://react-redux.js.org/
 
 @reduxjs/toolkit
 https://redux-toolkit.js.org/
+
+swr
+https://swr.vercel.app/ja/docs/getting-started
+
+axios
+https://github.com/axios/axios
+
+react-loading
+https://www.npmjs.com/package/react-loading
 ```
