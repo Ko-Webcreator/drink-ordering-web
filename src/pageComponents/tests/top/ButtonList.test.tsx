@@ -1,21 +1,12 @@
-import { Provider } from 'react-redux'
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, screen, waitFor } from 'pageComponents/tests/utils/store-utils'
 import React from 'react'
 import ButtonList from 'pageComponents/top/ButtonList'
-import { store } from 'store'
 import { server } from 'mocks/server'
 import { rest } from 'msw'
-import { SWRConfig } from 'swr'
 
 describe('Render ButtonList', () => {
   test('get mocks/order-items/', async () => {
-    render(
-      <SWRConfig value={{ provider: () => new Map() }}>
-        <Provider store={store}>
-          <ButtonList />
-        </Provider>
-      </SWRConfig>
-    )
+    render(<ButtonList />)
 
     expect(await screen.findByText('コーヒー')).toBeInTheDocument()
     expect(await screen.findByText('紅茶')).toBeInTheDocument()
@@ -31,13 +22,7 @@ describe('Render ButtonList', () => {
       })
     )
 
-    render(
-      <SWRConfig value={{ provider: () => new Map() }}>
-        <Provider store={store}>
-          <ButtonList />
-        </Provider>
-      </SWRConfig>
-    )
+    render(<ButtonList />)
 
     await waitFor(() => screen.queryByText('コーヒー'))
 
